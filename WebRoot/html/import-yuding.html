@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zn">
+<head>
+    <meta charset="UTF-8">
+    <title>无人前台</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- 使用最新的IE兼容模式渲染此网页 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 在双核浏览器下，默认使用webkit内核，由360浏览器提出 -->
+    <meta name="renderer" content="webkit">
+    <!--禁止手机号码识别-->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="vendor/softkeys/softkeys-0.0.1.css" />
+    <link rel="stylesheet" href="css/xufei-chaka.css" />
+    <style>
+        #softkeys{
+            margin-top: 50px;
+            width: 800px;
+            font-size: 20px;
+            padding: 20px 30px;
+            border-radius: 5px;
+            border: 2px solid #31ACF9;
+            outline: none;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .softkeys{
+            font-size: 1.2em;
+        }
+        .softkeys__btn{
+            border:0.1em solid #31ACF9;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="warnBox">
+        <div class="wB_content">
+            <p class="wb_title">古兜温泉：</p>
+            <div class="wbc_text" id="wB_msg">
+            </div>
+            <div class="wB_close">
+                <button onclick="closewarnBox()">关闭</button>
+            </div>
+        </div>
+    </div>
+    <!-- 头部横条部分 -->
+    <div class="top_bar">
+        <div class="tb_weather">
+            <i class="min_img"></i>
+            <span class="tbw_text">30℃</span>
+        </div>
+        <div class="tb_tiao"></div>
+        <div class="tb_time">
+            <p class="tbt_time">09:36</p>
+            <p class="tbt_date">2017-11-27 星期五</p>
+        </div>
+        <div class="tb_tiao"></div>
+        <a href="index.html" class="tb_index">
+            <i class="tbi_img"></i>
+            <span class="tbi_text">首页</span>
+        </a>
+        <div class="tb_phone">
+            <i class="tbp_img"></i>
+            <span>酒店服务热线：88888888</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="c_title">
+            <div class="ct_heng"></div>
+            <div class="ct_img">
+                <img src="img/title.png" />
+            </div>
+            <p class="ct_text">预定单号输入</p>
+        </div>
+        <div class="c_content">
+            <p>请输入预定单号...</p>
+            <input spellcheck="false" maxlength="20" type="text" name="ydid" id="softkeys" />
+            <div class="softkeys" data-target="input[name='ydid']"></div>
+        </div>
+        <div class="jiezhang">
+            <button class="nextGO">下一步</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="vendor/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="vendor/softkeys/softkeys-0.0.1.js" ></script>
+<script>
+    $(document).ready(function(){
+        $('.softkeys').softkeys({
+            target : $('.softkeys').data('target'),
+            layout : [
+                [
+                    ['`','~'],
+                    ['1','!'],
+                    ['2','@'],
+                    ['3','#'],
+                    ['4','$'],
+                    ['5','%'],
+                    ['6','^'],
+                    ['7','&amp;'],
+                    ['8','*'],
+                    ['9','('],
+                    ['0',')'],
+                    ['-', '_'],
+                    ['=','+'],
+                    'delete'
+                ],
+                [
+                    'q','w','e','r','t','y','u','i','o','p',
+                    ['[','{'],
+                    [']','}']
+                ],
+                [
+                    'capslock',
+                    'a','s','d','f','g','h','j','k','l',
+                    [';',':'],
+                    ["'",'&quot;'],
+                    ['\\','|']
+                ],
+                [
+                    'shift',
+                    'z','x','c','v','b','n','m',
+                    [',','&lt;'],
+                    ['.','&gt;'],
+                    ['/','?'],
+                    ['@']
+                ]
+            ]
+        });
+    });
+
+    $('.nextGO').click(function () {
+        var softkeys = $('#softkeys').val();
+        $.ajax({
+            type:'get',
+            aysnc: true,
+            url:host + 'unmanned/finance/booking',
+            data:{
+                bookingno:softkeys
+            },
+            success: function (res) {
+                console.log(res)
+                if(res.errorCode == 0){
+                    window.location.href="fangxing-timeok.html?gtype=yuding&bookingno="+softkeys
+                }else {
+                    showwarnBox('对不起，暂无此预订单号！')
+                }
+            },
+            error: function (err) {
+            }
+        })
+
+    })
+</script>
+</body>
+</html>

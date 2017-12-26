@@ -1,0 +1,207 @@
+.bg_img {
+  width: 100%;
+  height: 100%;
+}
+.circle {
+  width: 550px;
+  height: 550px;
+  background: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -275px;
+  margin-top: -300px;
+  border-radius: 50%;
+  background: url("../img/index/circle/circle.png") no-repeat;
+  background-size: 100% auto;
+}
+.circle .hu {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  /*圆弧 从左上开始 */
+  /* 圆弧字体 */
+  /*中间圆圈*/
+}
+.circle .hu .huo {
+  position: absolute;
+  left: 44px;
+  top: -1px;
+  width: 233px;
+  height: auto;
+  transform: rotate(8.5deg);
+  cursor: pointer;
+}
+.circle .hu .hut {
+  position: absolute;
+  left: -26px;
+  top: 216px;
+  width: 232px;
+  height: auto;
+  transform: rotate(-63.5deg);
+  cursor: pointer;
+}
+.circle .hu .hutr {
+  position: absolute;
+  left: 157px;
+  top: 350px;
+  width: 234px;
+  height: auto;
+  transform: rotate(-135.5deg);
+  cursor: pointer;
+}
+.circle .hu .huf {
+  position: absolute;
+  left: 343px;
+  top: 215px;
+  width: 234px;
+  height: auto;
+  transform: rotate(152.5deg);
+  cursor: pointer;
+}
+.circle .hu .hufv {
+  position: absolute;
+  left: 272px;
+  top: -2px;
+  width: 233px;
+  height: auto;
+  transform: rotate(80.5deg);
+  cursor: pointer;
+}
+.circle .hu .hu_active {
+  opacity: 0;
+  transition: all .2s;
+}
+.circle .hu :hover {
+  opacity: 1;
+}
+.circle .hu .h_text {
+  padding: 2px 2px;
+  width: 90px;
+  height: 68px;
+  cursor: pointer;
+  z-index: 3;
+}
+.circle .hu .h_text .ht_cion {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+}
+.circle .hu .h_text .ht_text {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+.circle .hu .h_ito {
+  position: absolute;
+  top: 82px;
+  left: 90px;
+}
+.circle .hu .h_ito .ht_cion {
+  background: url("../img/index/circle/m_icon.png");
+  background-position: -20px 0px;
+  background-size: auto 100%;
+}
+.circle .hu .h_itt {
+  position: absolute;
+  top: 288px;
+  left: 43px;
+}
+.circle .hu .h_itt .ht_cion {
+  background: url("../img/index/circle/m_icon.png");
+  background-position: -75px 0px;
+  background-size: auto 100%;
+}
+.circle .hu .h_itth {
+  position: absolute;
+  top: 436px;
+  left: 232px;
+}
+.circle .hu .h_itth .ht_cion {
+  background: url("../img/index/circle/m_icon.png");
+  background-position: -120px 0px;
+  background-size: auto 100%;
+}
+.circle .hu .h_itf {
+  position: absolute;
+  top: 300px;
+  left: 411px;
+}
+.circle .hu .h_itf .ht_cion {
+  background: url("../img/index/circle/m_icon.png");
+  background-position: -171px 0px;
+  background-size: auto 100%;
+}
+.circle .hu .h_itfi {
+  position: absolute;
+  top: 80px;
+  left: 359px;
+}
+.circle .hu .h_itfi .ht_cion {
+  background: url("../img/index/circle/m_icon.png");
+  background-position: -225px 0px;
+  background-size: auto 100%;
+}
+.circle .hu .sm_circle {
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: -140px;
+  background: white;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 30px #000;
+}
+.circle .hu .sm_circle .end_circle {
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  background: #FEA750;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -115px;
+  margin-top: -115px;
+  text-align: center;
+}
+.circle .hu .sm_circle .end_circle .jialandian {
+  margin-top: 30px;
+}
+.circle .hu .sm_circle .end_circle .edc_title {
+  color: #01286B;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+.circle .hu .sm_circle .end_circle .edc_english {
+  color: #01286B;
+  font-size: 16px;
+}
+.welcome {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  margin-left: -271px;
+  background: rgba(27, 115, 153, 0.8);
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+.welcome .we_title {
+  font-size: 20px;
+  border-bottom: none;
+  letter-spacing: 1px;
+}
+.welcome .we_title span {
+  font-size: 16px;
+  position: relative;
+  top: -1px;
+}
+.welcome p {
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid white;
+}

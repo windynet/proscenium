@@ -1,0 +1,179 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  user-select: none;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+html{
+  width: 100%;
+  height: 100%;
+  body {
+    height: 100%;
+    width: 100%;
+    .main{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      .top_bar {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: #052C71;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #05275F;
+        //天气
+        .tb_weather{
+          display: inline-block;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 15px;
+          .min_img{
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: url("../img/index/i_topbar.png");
+            background-size: auto 100%;
+            background-position: 71px 0px;
+          }
+          .tbw_text{
+            color: white;
+            opacity: 0.8;
+            position: relative;
+            top: -3px;
+            font-size: 25px;
+          }
+        }
+        //分割竖条
+        .tb_tiao{
+          height: 65px;
+          width: 3px;
+          background: white;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          opacity: 0.5;
+        }
+        //时间日期
+        .tb_time{
+          padding-left: 10px;
+          padding-right: 10px;
+          display: inline-block;
+          .tbt_time{
+            color: white;
+            opacity: 0.8;
+            font-size: 30px;
+            text-align: center;
+            letter-spacing: 3px;
+          }
+          .tbt_date{
+            color: white;
+            opacity: 0.8;
+            font-size: 20px;
+          }
+        }
+        //首页
+        .tb_index{
+          display: inline-block;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 15px;
+          .tbi_img{
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: url("../img/index/i_topbar.png");
+            background-size: auto 100%;
+            background-position: 0px 0px;
+          }
+          .tbi_text{
+            color: white;
+            opacity: 0.8;
+            position: relative;
+            top: -3px;
+            font-size: 25px;
+          }
+        }
+        //服务电话
+        .tb_phone{
+          display: inline-block;
+          padding-left: 10px;
+          padding-right: 10px;
+          padding-top: 15px;
+          float: right;
+          .tbp_img{
+            display: inline-block;
+            width: 55px;
+            height: 55px;
+            background: url("../img/index/i_topbar.png");
+            background-size: auto 100%;
+            background-position: 122px 0px;
+          }
+          span{
+            color: white;
+            opacity: 0.8;
+            position: relative;
+            top: -15px;
+            letter-spacing: 3px;
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+.warnBox{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  opacity: 0;
+  display: none;
+  background: rgba(0,0,0,0.2);
+  .wB_content{
+    margin: 0 auto;
+    margin-top: 5%;
+    transition: all 0.5s;
+    width: 500px;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    .wb_title{
+        font-size: 30px;
+        padding: 15px 0;
+        background: #31ACF9;
+        color: white;
+        text-indent: 50px;
+    }
+    .wbc_text{
+      text-align: center;
+      font-size: 25px;
+      padding: 10px 0;
+    }
+    .wB_close{
+      width: 100%;
+      padding: 5px 0;
+      text-align: right;
+      button{
+        margin-right: 3%;
+        padding: 5px 25px;
+        border: none;
+        outline: none;
+        background: #31ACF9;
+        color: white;
+        font-size: 25px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

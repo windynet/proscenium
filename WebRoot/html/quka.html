@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zn">
+<head>
+    <meta charset="UTF-8">
+    <title>无人前台</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- 使用最新的IE兼容模式渲染此网页 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 在双核浏览器下，默认使用webkit内核，由360浏览器提出 -->
+    <meta name="renderer" content="webkit">
+    <!--禁止手机号码识别-->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link  rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/quka.css" />
+</head>
+<body>
+<div class="main">
+    <!-- 头部横条部分 -->
+    <div class="top_bar">
+        <div class="tb_weather">
+            <i class="min_img"></i>
+            <span class="tbw_text">30℃</span>
+        </div>
+        <div class="tb_tiao"></div>
+        <div class="tb_time">
+            <p class="tbt_time">09:36</p>
+            <p class="tbt_date">2017-11-27 星期五</p>
+        </div>
+        <div class="tb_tiao"></div>
+        <a href="index.html" class="tb_index">
+            <i class="tbi_img"></i>
+            <span class="tbi_text">首页</span>
+        </a>
+        <div class="tb_phone">
+            <i class="tbp_img"></i>
+            <span>酒店服务热线：88888888</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="c_title">
+            <div class="ct_heng"></div>
+            <div class="ct_img">
+                <img src="img/title.png" />
+            </div>
+            <p class="ct_text">取卡</p>
+        </div>
+        <div class="c_content">
+            <div class="quekaok">
+                <img src="img/OK.png" />
+                <div class="qk_content">
+                    <p class="qkc_title">取卡成功（房号：702）</p>
+                    <p class="qkc_welcome">您已成功入住酒店，祝您生活愉快！</p>
+                </div>
+            </div>
+            <div class="quka_message">
+                <img src="img/card_ok.png" />
+                <P class="take_card">请取走您的房卡</P>
+                <p class="detail_message"><span class="dm_title">房 型</span>：<span>标准单人房</span></p>
+                <p class="detail_message"><span class="dm_title">入住天数</span>：<span>1天</span></p>
+                <p class="detail_message"><span class="dm_title">入住时间</span>：<span>2017-12-4&nbsp;&nbsp;14:40</span></p>
+                <p class="detail_message"><span class="dm_title">离店时间</span>：<span>2017-12-5&nbsp;&nbsp;14:40</span></span></p>
+            </div>
+        </div>
+        <div class="jiezhang">
+            <button class="nextGO">下一步</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="vendor/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script>
+    $('.nextGO').click(function () {
+        window.location.href="index.html"
+    })
+</script>
+</body>
+</html>

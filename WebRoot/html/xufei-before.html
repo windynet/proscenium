@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zn">
+<head>
+    <meta charset="UTF-8">
+    <title>无人前台</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- 使用最新的IE兼容模式渲染此网页 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- 在双核浏览器下，默认使用webkit内核，由360浏览器提出 -->
+    <meta name="renderer" content="webkit">
+    <!--禁止手机号码识别-->
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link  rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/xufei-before.css" />
+</head>
+<body>
+<div class="main">
+    <!-- 头部横条部分 -->
+    <div class="top_bar">
+        <div class="tb_weather">
+            <i class="min_img"></i>
+            <span class="tbw_text">30℃</span>
+        </div>
+        <div class="tb_tiao"></div>
+        <div class="tb_time">
+            <p class="tbt_time">09:36</p>
+            <p class="tbt_date">2017-11-27 星期五</p>
+        </div>
+        <div class="tb_tiao"></div>
+        <a href="index.html" class="tb_index">
+            <i class="tbi_img"></i>
+            <span class="tbi_text">首页</span>
+        </a>
+        <div class="tb_phone">
+            <i class="tbp_img"></i>
+            <span>酒店服务热线：88888888</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="c_title">
+            <div class="ct_heng"></div>
+            <div class="ct_img">
+                <img src="img/title.png" />
+            </div>
+            <p class="ct_text">续费</p>
+        </div>
+        <div class="c_content">
+            <div class="cc_imgs">
+                <div class="big_img">
+                    <img src="img/bg.png" />
+                </div>
+                <div class="min_img">
+                    <div class="mi_pardon">
+                        <img src="img/min_img/min1.gif" />
+                        <img src="img/min_img/min2.gif" />
+                        <img src="img/min_img/min3.gif" />
+                        <img src="img/min_img/min4.gif" />
+                    </div>
+                </div>
+            </div>
+            <div class="cc_contetn">
+                <div class="ccc_rp">
+                    <p class="ccc_title">酒店续费</p>
+                    <p class="text_item"><span class="ti_left">房 型</span>：<span>标准单人房</span></p>
+                    <p class="text_item"><span class="ti_left">房 号</span>：<span>702</span></p>
+                    <p class="text_item"><span class="ti_left">续费天数</span>：<span class="c_anniu">-</span><span>&nbsp;1&nbsp;</span><span class="c_anniu">+</span></p>
+                    <p class="text_item"><span class="ti_left">续费时间</span>：2017/12/5   14:40</p>
+                    <p class="text_item"><span class="ti_left">　 至</span>：2017/12/5   14:40</p>
+                    <p class="text_item"><span class="ti_left">押 金</span>：<span>702</span></p>
+                    <p class="text_item t_last"><span class="ti_left">房 费</span>：<span>702</span><span class="jiageb">价格表</span></p>
+                </div>
+                <div class="ccc_button">
+                    <p class="z_jiage">总计：<span>380</span>元</p>
+                    <p class="okruzhu"><img src="img/okruzu.png" />确认入住</p>
+                </div>
+            </div>
+        </div>
+        <div class="jiezhang">
+            <button class="returnGO">返回</button>
+            <button class="nextGO">下一步</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="vendor/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script>
+    $('.returnGO').click(function () {
+        window.location.href="xufei-chaka.html?gtype=xuzhu"
+    });
+    $('.nextGO').click(function () {
+        window.location.href="xufei.html"
+    })
+</script>
+</body>
+</html>
