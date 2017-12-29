@@ -121,7 +121,6 @@ public class FaceOSService {
 			rr_face_primary_t.ByReference primary = new rr_face_primary_t.ByReference();
 			primary.landmarks=P_FACE_ARRAY.landmarks;
 			primary.rect=P_FACE_ARRAY.rect;
-			System.out.println("kkkkkkkkkkkkkkk");
 			FaceVerify.faceVerify.rr_fv_extract_feature(VERIFY_HANDLE, imageData, 
 					FaceDetect.RR_IMAGE_BGR8UC3, bufferedImage.getWidth(), bufferedImage.getHeight(), primary, features[i]);
 		}
