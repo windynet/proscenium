@@ -68,11 +68,7 @@ public class FaceOSService {
 		}
 	}
 	
-	public FaceOSService() {}
-	
-	public static boolean d() {
-		return true;
-	}
+	private FaceOSService() {}
 	
 	/**
 	 * 人脸检测对比
