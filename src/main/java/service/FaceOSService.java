@@ -7,7 +7,6 @@ import javax.imageio.ImageIO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 
 import com.prosecenium.core.ConfigConstant;
 import com.prosecenium.core.dllinterface.FaceDetect;
@@ -26,7 +25,6 @@ import com.sun.jna.ptr.PointerByReference;
  * @since 17.12.2
  *
  */
-@Service
 public class FaceOSService {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(FaceOSService.class); 
@@ -68,7 +66,7 @@ public class FaceOSService {
 		}
 	}
 	
-	private FaceOSService() {}
+	public FaceOSService() {}
 	
 	/**
 	 * 人脸检测对比
@@ -87,7 +85,8 @@ public class FaceOSService {
 		float confidence = -1.0f;
 		for(int i = 0; i < 2; i++) {
 			try {
-				bufferedImage = ImageIO.read(new File(theTwoPath[i]));
+				File file = new File(theTwoPath[i]);
+				bufferedImage = ImageIO.read(file);
 				imageData = ImageConvertUtil.getMatrixBGR(bufferedImage);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -97,19 +96,22 @@ public class FaceOSService {
 				FaceDetect.faceDetect.rr_fd_detect(DETECT_HANDLE, imageData, FaceDetect.RR_IMAGE_BGR8UC3,
 						bufferedImage.getWidth(), bufferedImage.getHeight(), POINTER_BY_REFERENCE, faceCount);
 				if(faceCount.getValue() != 1) {
-					LOGGER.info("人脸识别失败，第" + i + "张图片识别出的人脸数量为" + faceCount.getValue());
+					LOGGER.info("人脸识别失败，第" + (i + 1) + "张图片识别出的人脸数量为" + faceCount.getValue());
 					return -1;
 				}
 				P_FACE_ARRAY.read();
-				System.out.println("人脸信息："+P_FACE_ARRAY);
-				if(P_FACE_ARRAY.yaw == 0 && P_FACE_ARRAY.confidence != confidence) {
+				LOGGER.info("第" + (i + 1) + "张图片的人脸信息："+P_FACE_ARRAY);
+//				if(P_FACE_ARRAY.confidence != 0 && P_FACE_ARRAY.confidence < 1) {
+//					confidence = P_FACE_ARRAY.confidence;
+//					FaceDetect.faceDetect.rr_fd_release_detect_result(POINTER);
+//				}
+				if(P_FACE_ARRAY.yaw == 0 && P_FACE_ARRAY.confidence != confidence 
+						&& (P_FACE_ARRAY.confidence == 0 || P_FACE_ARRAY.confidence > 1)) {
 					confidence = P_FACE_ARRAY.confidence;
 					break;
 				}
-				LOGGER.info("未能读取到内存中人脸数据，请重试");
-				if(j==10) {
-					System.out.println("jjjjjjjjjjjjjjj");
-//					FaceDetect.faceDetect.rr_fd_release_detect_result(POINTER);
+				LOGGER.info("未能读取到内存中人脸数据！");
+				if(j==3) {
 					return -4;
 				}
 			}
@@ -121,7 +123,7 @@ public class FaceOSService {
 					FaceDetect.RR_IMAGE_BGR8UC3, bufferedImage.getWidth(), bufferedImage.getHeight(), primary, features[i]);
 		}
 		float ret = FaceVerify.faceVerify.rr_fv_compare_features(features[0], features[1]);
-		System.out.println("ret:"+ret);
+		LOGGER.info("人脸对比相似度："+ret);
 		return ret;
 	}
 
@@ -133,5 +135,5 @@ public class FaceOSService {
 		FaceDetect.faceDetect.rr_fd_destroy_detector(DETECT_HANDLE);
 		FaceVerify.faceVerify.rr_fv_destroy_verifier(VERIFY_HANDLE);
 	}
-
+	
 }
